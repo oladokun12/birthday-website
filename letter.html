@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Letter For You</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg, #3b0000, #6e0a0a, #a11212);
+    padding:20px;
+    font-family: 'Playfair Display', serif;
+    animation: fadeIn 1s ease-in;
+}
+
+/* 💌 Letter container */
+.letter{
+    max-width:700px;
+    width:100%;
+    padding:30px;
+    border-radius:15px;
+
+    /* ✨ Wavy paper effect */
+    background: repeating-linear-gradient(
+        to bottom,
+        #fff,
+        #fff 28px,
+        #f3f3f3 29px
+    );
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    line-height:1.8;
+    color:#333;
+
+    animation: floatUp 1s ease;
+}
+
+/* ✨ Title */
+.title{
+    font-family: 'Great Vibes', cursive;
+    font-size:2.5rem;
+    text-align:center;
+    margin-bottom:20px;
+    color:#6e0a0a;
+}
+
+/* 💬 Text */
+.letter p{
+    margin-bottom:15px;
+    font-size:1rem;
+}
+
+/* ✍️ Signature */
+.signature{
+    margin-top:20px;
+    font-style:italic;
+}
+
+/* 🔙 Back button */
+.back{
+    display:block;
+    margin:30px auto 0;
+    width:max-content;
+    padding:10px 20px;
+    background:#3b0000;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.back:hover{
+    background:#6e0a0a;
+    transform:scale(1.05);
+}
+
+/* 🎬 Animations */
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes floatUp{
+    from{transform:translateY(30px); opacity:0;}
+    to{transform:translateY(0); opacity:1;}
+}
+
+/* 📱 Mobile */
+@media(max-width:600px){
+    .letter{
+        padding:20px;
+    }
+
+    .title{
+        font-size:2rem;
+    }
+
+    .letter p{
+        font-size:0.95rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="letter">
+
+<h1 class="title">For You ❤️</h1>
+
+<p><strong>Happy Birthday, Global Koroyin 🤍</strong></p>
+
+<p>I don’t even know where to start, because how do you fully put into words what someone means to you? But I’ll try—because you deserve that and more.</p>
+
+<p>You are one of the most genuine people I know. The kind of person whose presence brings calm, whose words carry weight, and whose heart… is rare. Being close to you has been a gift I don’t take lightly.</p>
+
+<p>I have been watching you grow, push, endure, and keep going—even for the little time—and that alone inspires me more than I probably say. You’re stronger than you think, wiser than you realize, and you carry something special that the world needs.</p>
+
+<p>On your birthday, I don’t just celebrate the fact that you were born—I celebrate the man you are becoming. I pray that this new year brings you clarity where you’ve been confused, peace where things have been heavy, and open doors in places you didn’t even expect. May God guide you, keep you, and favor you in ways that leave you in awe.</p>
+
+<p>And beyond all the prayers, I just want you to know this—<br>
+You matter. Deeply.<br>
+You’re appreciated. Truly.<br>
+And you’re not alone… not now, not ever.</p>
+
+<p>Thank you for being you. Thank you for letting me be close to you.</p>
+
+<p class="signature">
+Happy birthday once again ❤️<br>
+— From someone who genuinely cares about you
+</p>
+
+<a href="main.html" class="back">← Go Back</a>
+
+</div>
+
+</body>
+</html>

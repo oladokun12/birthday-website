@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>YOUR SUPRISES</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+	<style>
+		* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1rem;
+    font-family: 'great vibes';
+    background: linear-gradient(135deg, #3b0000, #6e0a0a, #a11212);
+    color: mintcream;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1s ease-in;
+}
+
+.main-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.gifts-container {
+    display: flex;
+    gap: 3rem;
+}
+
+.gifts {
+    width: 5rem;
+    height: 5rem;
+    transition: transform 0.3s ease;
+}
+
+.gift-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.gift-box:hover {
+    transform: translateY(-8px);
+}
+
+
+
+.gift-box:hover .gifts {
+    transform: scale(1.1);
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 MOBILE (iPhone 14 Pro and similar) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+        word-spacing: 0.3em;
+    }
+
+    .main-title {
+    font-size: 1.8rem;
+}
+
+    .gifts-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .gifts {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+/* 📲 TABLET */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .gifts-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .gifts {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+}
+
+/* 💻 LAPTOP */
+@media (min-width: 1025px) {
+    .gifts-container {
+        flex-direction: row;
+    }
+
+    .gifts {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+	</style>
+</head>
+
+<body>
+	<h1 class="main-title">A Little Surprise For You 🎁</h1>
+	<div class="gifts-container">
+		<div class="gift-box"><a href="#"><img class="gifts" src="images/white-headphones.png" alt="headphones"></a>
+        <span> A song for you</span></div>
+
+        <div class="gift-box"><a href="pictures.html"><img class="gifts" src="images/camera.png" alt="camera"></a><span>pictures of you</span></div>
+ 
+        <div class="gift-box"><a href="letter.html"><img class="gifts" src="images/letter.png" alt="letter to you"></a><span>A letter to you</span></div>
+    </div>
+	
+</body>
+</html>
