@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Song To You</title>
+
+<style>
+	body {
+		margin: 0;
+		height: 100vh;
+		background: linear-gradient(135deg, #3b0000, #6e0a0a, #a11212);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: Arial, sans-serif;
+		overflow: hidden;
+	}
+
+	body::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: rgba(0,0,0,0.6);
+	}
+
+	.player {
+		position: relative;
+		width: 92%;
+		max-width: 1000px;
+		aspect-ratio: 16 / 9;
+		border-radius: 16px;
+		overflow: hidden;
+		box-shadow: 0 30px 90px rgba(0,0,0,0.8);
+		z-index: 1;
+	}
+
+	video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		background: black;
+	}
+
+	/* CONTROL BAR */
+	.controls {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+		padding: 12px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		box-sizing: border-box;
+	}
+
+	button {
+		background: rgba(255,255,255,0.1);
+		border: 1px solid rgba(255,255,255,0.3);
+		color: white;
+		padding: 8px 14px;
+		border-radius: 8px;
+		cursor: pointer;
+		backdrop-filter: blur(6px);
+	}
+
+	button:hover {
+		background: rgba(255,255,255,0.2);
+	}
+
+	input[type="range"] {
+		flex: 1;
+	}
+
+	.time {
+		color: white;
+		font-size: 12px;
+		min-width: 80px;
+		text-align: right;
+	}
+</style>
+</head>
+
+<body>
+
+<div class="player">
+
+	<video id="video">
+		<source src="song.mp4" type="video/mp4">
+	</video>
+
+	<div class="controls">
+
+		<button id="playBtn">▶</button>
+
+		<input type="range" id="seek" value="0" min="0">
+
+		<div class="time" id="time">0:00 / 0:00</div>
+
+	</div>
+
+</div>
+
+<script>
+	const video = document.getElementById("video");
+	const playBtn = document.getElementById("playBtn");
+	const seek = document.getElementById("seek");
+	const time = document.getElementById("time");
+
+	// PLAY / PAUSE
+	playBtn.addEventListener("click", () => {
+		if (video.paused) {
+			video.play();
+			playBtn.textContent = "⏸";
+		} else {
+			video.pause();
+			playBtn.textContent = "▶";
+		}
+	});
+
+	// UPDATE SEEK BAR
+	video.addEventListener("timeupdate", () => {
+		seek.value = (video.currentTime / video.duration) * 100;
+
+		let current = formatTime(video.currentTime);
+		let duration = formatTime(video.duration);
+		time.textContent = `${current} / ${duration}`;
+	});
+
+	// SEEK VIDEO
+	seek.addEventListener("input", () => {
+		video.currentTime = (seek.value / 100) * video.duration;
+	});
+
+	// FORMAT TIME
+	function formatTime(sec) {
+		if (isNaN(sec)) return "0:00";
+		let m = Math.floor(sec / 60);
+		let s = Math.floor(sec % 60);
+		return `${m}:${s < 10 ? "0" : ""}${s}`;
+	}
+
+	// RESET UI WHEN ENDS
+	video.addEventListener("ended", () => {
+		playBtn.textContent = "▶";
+	});
+</script>
+
+</body>
+</html>
