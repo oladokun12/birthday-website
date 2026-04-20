@@ -1,104 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A Special Surprise 🎁</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Special Surprise 🎁</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #3b0000, #6e0a0a, #a11212);
-      color: white;
-      text-align: center;
-      padding: 40px 10px;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    .container {
-      background: rgba(0, 0, 0, 0.35);
-      width: 90%;
-      max-width: 650px;
-      margin: auto;
-      padding: 35px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-      backdrop-filter: blur(6px);
-    }
+body{
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #3b0000, #6e0a0a, #a11212);
+  color: white;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  text-align:center;
+  animation: fadeIn 1s ease-in;
+}
 
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }
+/* 📦 Container */
+.container{
+  background: rgba(0, 0, 0, 0.35);
+  width:100%;
+  max-width:600px;
+  padding:30px;
+  border-radius:16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+}
 
-    h2 {
-      font-size: 1.3rem;
-      font-weight: normal;
-      opacity: 0.9;
-    }
+/* 📝 Text */
+h1{
+  font-size:2.2rem;
+  margin-bottom:10px;
+}
 
-    .subtext {
-      margin: 20px 0;
-      font-size: 1rem;
-      opacity: 0.85;
-    }
+h2{
+  font-size:1.2rem;
+  font-weight:normal;
+  opacity:0.9;
+}
 
-    .gift-btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 15px 28px;
-      background: #ffffff;
-      color: #6e0a0a;
-      border-radius: 10px;
-      font-size: 18px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
+.subtext{
+  margin:20px 0;
+  font-size:1rem;
+  opacity:0.85;
+}
 
-    .gift-btn:hover {
-      background: #f2f2f2;
-      transform: scale(1.05);
-    }
+/* 🎁 Button */
+.gift-btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 25px;
+  background:white;
+  color:#6e0a0a;
+  border-radius:10px;
+  font-size:1rem;
+  font-weight:bold;
+  text-decoration:none;
+  transition:all 0.3s ease;
+}
 
-    /* Responsive */
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.7rem;
-      }
+.gift-btn:hover{
+  background:#f2f2f2;
+  transform:scale(1.05);
+}
 
-      h2 {
-        font-size: 1.1rem;
-      }
+/* 🎬 Fade animation */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(10px);}
+  to{opacity:1; transform:translateY(0);}
+}
 
-      .gift-btn {
-        width: 100%;
-        display: block;
-      }
+/* 📱 MOBILE (iPhone etc.) */
+@media (max-width:600px){
+  h1{
+    font-size:1.7rem;
+  }
 
-      .container {
-        padding: 25px;
-      }
-    }
-  </style>
+  h2{
+    font-size:1rem;
+  }
+
+  .subtext{
+    font-size:0.95rem;
+  }
+
+  .gift-btn{
+    width:100%;
+  }
+
+  .container{
+    padding:20px;
+  }
+}
+
+/* 📲 TABLET */
+@media (min-width:601px) and (max-width:1024px){
+  h1{
+    font-size:2rem;
+  }
+
+  .container{
+    padding:25px;
+  }
+}
+
+/* 💻 LAPTOP */
+@media (min-width:1025px){
+  h1{
+    font-size:2.3rem;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
+  <h1>🎉 A Special Surprise For You 🎉</h1>
+  <h2>This may be late… but it comes from the heart ❤️</h2>
 
-    <h1>🎉 A Special Surprise For You 🎉</h1>
+  <p class="subtext">
+    A small reminder that you are appreciated, valued, and truly special ✨
+  </p>
 
-    <h2>This may be late… but it comes from the heart ❤️</h2>
-
-    <p class="subtext">
-      A small reminder that you are appreciated, valued, and truly special ✨
-    </p>
-
-    <!-- Redirect button -->
-    <a href="hero.html" class="gift-btn">🎁 Open Your Surprise</a>
-
-  </div>
+  <a href="hero.html" class="gift-btn">🎁 Open Your Surprise</a>
+</div>
 
 </body>
 </html>
